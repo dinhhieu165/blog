@@ -1,0 +1,9 @@
+<li id="comment-<%= comment.id %>" >
+  <span><%=link_to comment.user_name, comment.user %></span><br>
+  <figure class="comment">
+    <span class="content"><%= comment.content %></span><br>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(comment.created_at) %> ago.
+    </span>
+  </figure>
+</li>

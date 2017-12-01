@@ -1,0 +1,38 @@
+<% if logged_in? %>
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+  <div class="row">
+    <aside class="col-md-12">
+      <section class="micropost_form">
+        <%= render 'shared/post_form' %>
+      </section>
+    </aside>
+  </div>
+    <div class="col-md-8">
+      <%= render 'shared/feed' %>
+    </div>
+<% else %>
+
+
+  <header class="intro-header">
+        <div class="container">
+          <div class="intro-message">
+            <h1>Landing Page</h1>
+            <h3>A Template by Start Bootstrap</h3>
+            <hr class="intro-divider">
+            <ul class="list-inline intro-social-buttons">
+              <li class="list-inline-item">
+                <%= link_to "Sign in", login_path, class: "btn btn-default btn-lg" %>
+              </li>
+              <li class="list-inline-item">
+                <%= link_to "Sign up", new_user_path, class: "btn btn-success btn-lg" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+  </header>
+<% end %>

@@ -1,0 +1,4 @@
+<span><%= current_user.name %></span><br>
+<span><%= pluralize(current_user.posts.count, "post") %></span><br>
+<span><%= link_to "view my profile", current_user %></span>
+

@@ -1,0 +1,20 @@
+
+
+  <div class="post-preview">
+    <%= link_to post.user.name, post.user %>
+      <h2 class="post-title">
+        <%= post.title %>
+      </h2>
+      <h3 class="post-subtitle">
+        <%	 if post.content.length > 100 %>
+            <%= post.content.to_s[0,99]%><%= link_to "...More" , post %></span><br>
+        <%else %>
+            <%= post.content %><br>
+            <%= link_to "More" , post %>
+        <% end %>
+      </h3>
+
+    <p class="post-meta">Posted by
+      Posted <%= time_ago_in_words(post.created_at) %> <ago></ago></p>
+  </div>
+  <hr>

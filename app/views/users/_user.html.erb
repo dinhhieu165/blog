@@ -1,0 +1,15 @@
+<li id = "user-<%= user.id %>">
+  <%= link_to user.name, user %>
+  <% if logged_in? && current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
+
+<!-- <script type="text/javascript">
+	console.log("#user-<%= user.id %>");
+	// $("ul li:eq(1)").on("click", function(e){
+	// 	$("#user-<%= user.id %>").remove();
+	// })
+	
+</script> -->

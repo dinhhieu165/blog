@@ -1,0 +1,15 @@
+<h1><%= @post.content %></h1>
+<p><%= render "shared/like_form" %> </p>
+<p>Tags: <%= 	@post.tags.map(&:name).map {|t| link_to t, tag_path(t)}.join(",").html_safe  %></p>
+<div class="col-md-8">
+    <% if @post.comments.any? %>
+      <ul class="comments">
+        <%= render @comments %>
+      </ul>
+ 
+    <% end %>
+ </div>
+<%= render "shared/comment_form" %>	
+
+
+

@@ -1,0 +1,16 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <!-- <a href="<%#= following_user_path(@user) %>"> -->
+  <%= link_to relationships_path(id: @user.id, state: :following), class: "btn btn-primary" do %>
+    <strong id="following" class="stat">
+      <%= @user.following.count %>
+    </strong>
+    following
+  <% end %>
+  <%= link_to relationships_path(id: @user.id, state: :followers), class: "btn btn-info" do %>
+    <strong id="followers" class="stat">
+      <%= @user.followers.count %>
+    </strong>
+    followers
+  <% end %>
+</div>

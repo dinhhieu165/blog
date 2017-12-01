@@ -1,0 +1,11 @@
+<% if @post.likes.find_by(user_id: current_user.id)%>
+  <%= link_to "Liked", @post.likes.find_by(user_id: current_user.id),class: "like", method: :delete %>
+<% else %>
+    <%= form_for @post.likes.build do |f| %>
+        <%= f.hidden_field :user_id , value: current_user.id %>
+        <%= f.hidden_field :post_id , value: @post.id %>
+        <%= f.submit "Like", class: "like_form" %>
+    <% end %>
+<% end %>
+
+  <p class="likes"><%=	 @post.likes.count %></p>

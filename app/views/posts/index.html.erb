@@ -1,0 +1,14 @@
+<% if @tag %>
+  <h1>Tags: <%= @tag.name %></h1>
+<% end %>
+<div class="col-md-12">
+  <% if @post %>
+    <h3>Posts (<%= @post.count %>)</h3>
+    <ol class="microposts">
+      <%= render @post %>
+    </ol>
+    <%= will_paginate @post %>
+   <% else%>
+    <h1>Sorry, we cant find anything like this</h1>
+  <% end %>
+</div>
